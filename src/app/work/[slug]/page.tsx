@@ -14,6 +14,7 @@ import {
   Row,
   Avatar,
   Line,
+  Carousel,
 } from "@once-ui-system/core";
 import { baseURL, about, person, work } from "@/resources";
 import { formatDate } from "@/utils/formatDate";
@@ -118,8 +119,24 @@ export default async function Project({
           </Text>
         </Row>
       </Row>
-      {post.metadata.images.length > 0 && (
-        <Media priority aspectRatio="16 / 9" radius="m" alt="image" src={post.metadata.images[0]} />
+      {post.metadata.images && post.metadata.images.length > 0 && (
+        <Carousel
+          items={post.metadata.images.map((src, index) => ({
+            slide: src,  // string URL → will render as <img>
+            alt: `${post.metadata.title} - Image ${index + 1}`,
+          }))}
+          play={{
+            auto: true,          // Enable autoplay
+            interval: 3000,      // Slide change every 4 seconds (adjust as needed)
+            controls: true,      // Show play/pause during autoplay (optional)
+            progress: true,      // Show progress bar during autoplay (optional)
+          }}
+          controls={true}        // Show navigation arrows
+          indicator="line"       // Show line dots indicator (or "thumbnail" if preferred)
+          aspectRatio="16 / 9"   // Keep your desired ratio
+          gap="s"
+          radius="m"
+        />
       )}
       <Column style={{ margin: "auto" }} as="article" maxWidth="xs">
         <CustomMDX source={post.content} />

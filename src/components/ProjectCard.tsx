@@ -23,6 +23,7 @@ interface ProjectCardProps {
 
 export const ProjectCard: React.FC<ProjectCardProps> = ({
   href,
+  priority = false,
   images = [],
   title,
   content,
@@ -32,13 +33,27 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
 }) => {
   return (
     <Column fillWidth gap="m">
-      <Carousel
-        sizes="(max-width: 960px) 100vw, 960px"
-        items={images.map((image) => ({
-          slide: image,
-          alt: title,
-        }))}
-      />
+      {images.length > 0 && (
+        <Carousel
+          sizes="(max-width: 960px) 100vw, 960px"
+          items={images.map((image) => ({
+            slide: image,
+            alt: title,
+          }))}
+          play={{
+            auto: false,          // Autoplay aktif di card list
+            interval: 4000,      // Ganti slide setiap 3.5 detik (sedikit lebih cepat di list agar terasa hidup, sesuaikan kalau mau)
+            controls: true,      // Tampilkan play/pause button saat autoplay (opsional)
+            progress: true      // Tanpa progress bar biar card tetap clean (bisa true kalau mau)
+          }}
+          controls={true}        // Panah navigasi muncul saat hover
+          indicator="line"       // Dot indicator (bisa ganti ke "thumbnail" kalau ingin thumbnail kecil)
+          aspectRatio="16 / 9"   // Konsisten dengan detail page
+          gap="s"
+          radius="m"
+          priority={priority}    // Gunakan priority dari props kalau ada
+        />
+      )}
       <Flex
         s={{ direction: "column" }}
         fillWidth
@@ -69,7 +84,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
                   style={{ margin: "0", width: "fit-content" }}
                   href={href}
                 >
-                  <Text variant="body-default-s">Read case study</Text>
+                  <Text variant="body-default-s">View Project</Text>
                 </SmartLink>
               )}
               {link && (

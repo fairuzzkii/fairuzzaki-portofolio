@@ -43,8 +43,15 @@ export default function ClientCategoryFilter({ initialProjects }: ClientCategory
       );
 
   const sortedProjects = [...filteredProjects].sort((a, b) => {
-    return new Date(b.metadata.publishedAt).getTime() - new Date(a.metadata.publishedAt).getTime();
-  });
+  const dateA = new Date(a.metadata.publishedAt).getTime();
+  const dateB = new Date(b.metadata.publishedAt).getTime();
+
+  // Jika salah satu tanggal tidak valid, pindahkan ke paling bawah
+  if (isNaN(dateA)) return 1;
+  if (isNaN(dateB)) return -1;
+
+  return dateB - dateA; // Terbaru ke terlama
+});
 
   return (
     <>
