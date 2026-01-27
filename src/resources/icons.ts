@@ -1,0 +1,121 @@
+import { IconType } from "react-icons";
+
+import {
+  HiArrowUpRight,
+  HiOutlineLink,
+  HiArrowTopRightOnSquare,
+  HiEnvelope,
+  HiCalendarDays,
+  HiArrowRight,
+  HiOutlineEye,
+  HiOutlineEyeSlash,
+  HiOutlineDocument,
+  HiOutlineGlobeAsiaAustralia,
+  HiOutlineRocketLaunch,
+} from "react-icons/hi2";
+
+import {
+  PiHouseDuotone,
+  PiUserCircleDuotone,
+  PiGridFourDuotone,
+  PiBookBookmarkDuotone,
+  PiImageDuotone,
+} from "react-icons/pi";
+
+import {
+  SiJavascript,
+  SiNextdotjs,
+  SiFigma,
+  SiSupabase,
+  SiTypescript,
+  SiExpress,
+  SiReact,
+  SiElectron,
+  SiCplusplus,
+  SiKotlin,
+  SiTailwindcss,
+  SiMysql,
+  SiPostgresql,
+  SiFirebase,
+  SiPostman,
+  SiSwagger,
+  SiVercel,
+  SiNgrok,
+  SiGit,
+  SiCanva,
+  SiClickup
+  
+  
+} from "react-icons/si";
+
+import { FaDiscord, FaGithub, FaLinkedin, FaX, FaThreads, FaInstagram, FaXTwitter, FaFacebook, FaPinterest, FaWhatsapp, FaReddit, FaTelegram, FaSquareDribbble, FaNodeJs, FaPhp,  FaHtml5, FaCss3,FaLaravel,FaBootstrap,FaFlutter,FaDartLang, FaGit, FaJira, FaTrello, 
+  FaPython} 
+from "react-icons/fa6";
+
+export const iconLibrary: Record<string, IconType> = {
+  arrowUpRight: HiArrowUpRight,
+  arrowRight: HiArrowRight,
+  email: HiEnvelope,
+  globe: HiOutlineGlobeAsiaAustralia,
+  person: PiUserCircleDuotone,
+  grid: PiGridFourDuotone,
+  book: PiBookBookmarkDuotone,
+  openLink: HiOutlineLink,
+  calendar: HiCalendarDays,
+  home: PiHouseDuotone,
+  gallery: PiImageDuotone,
+  discord: FaDiscord,
+  eye: HiOutlineEye,
+  eyeOff: HiOutlineEyeSlash,
+  github: FaGithub,
+  linkedin: FaLinkedin,
+  x: FaX,
+  twitter: FaXTwitter,
+  threads: FaThreads,
+  arrowUpRightFromSquare: HiArrowTopRightOnSquare,
+  document: HiOutlineDocument,
+  rocket: HiOutlineRocketLaunch,
+  javascript: SiJavascript,
+  nextjs: SiNextdotjs,
+  supabase: SiSupabase,
+  figma: SiFigma,
+  facebook: FaFacebook,
+  pinterest: FaPinterest,
+  whatsapp: FaWhatsapp,
+  reddit: FaReddit,
+  telegram: FaTelegram,
+  instagram: FaInstagram,
+  dribbble: FaSquareDribbble,
+  nodejs: FaNodeJs,
+  php: FaPhp,
+  html5: FaHtml5,
+  css3: FaCss3,
+  laravel: FaLaravel,
+  bootstrap: FaBootstrap,
+  flutter: FaFlutter,
+  dart: FaDartLang,
+  git: SiGit,
+  jira:FaJira,
+  trello:FaTrello,
+  python:FaPython,
+  typescript: SiTypescript,
+  expressjs: SiExpress,
+  reactjs: SiReact,
+  electronjs: SiElectron,
+  kotlin: SiKotlin,
+  tailwindcss: SiTailwindcss,
+  mysql: SiMysql,
+  postgresql: SiPostgresql,
+  firebase: SiFirebase,
+  postman: SiPostman,
+  swagger: SiSwagger,
+  vercel: SiVercel,
+  ngrok: SiNgrok,
+  cpp : SiCplusplus,
+  canva: SiCanva,
+  clickup: SiClickup,
+
+};
+
+export type IconLibrary = typeof iconLibrary;
+export type IconName = keyof IconLibrary;
