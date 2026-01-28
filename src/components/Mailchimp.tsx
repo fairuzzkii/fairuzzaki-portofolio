@@ -1,53 +1,11 @@
 "use client";
 
-import { mailchimp, newsletter } from "@/resources";
-import { Button, Heading, Input, Text, Background, Column, Row } from "@once-ui-system/core";
+import { mailchimp } from "@/resources";
+import { Button, Heading, Text, Background, Column, Row, Flex } from "@once-ui-system/core";
 import { opacity, SpacingToken } from "@once-ui-system/core";
-import { useState } from "react";
-
-function debounce<T extends (...args: any[]) => void>(func: T, delay: number): T {
-  let timeout: ReturnType<typeof setTimeout>;
-  return ((...args: Parameters<T>) => {
-    clearTimeout(timeout);
-    timeout = setTimeout(() => func(...args), delay);
-  }) as T;
-}
 
 export const Mailchimp: React.FC<React.ComponentProps<typeof Column>> = ({ ...flex }) => {
-  const [email, setEmail] = useState<string>("");
-  const [error, setError] = useState<string>("");
-  const [touched, setTouched] = useState<boolean>(false);
-
-  const validateEmail = (email: string): boolean => {
-    if (email === "") {
-      return true;
-    }
-
-    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    return emailPattern.test(email);
-  };
-
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const value = e.target.value;
-    setEmail(value);
-
-    if (!validateEmail(value)) {
-      setError("Please enter a valid email address.");
-    } else {
-      setError("");
-    }
-  };
-
-  const debouncedHandleChange = debounce(handleChange, 2000);
-
-  const handleBlur = () => {
-    setTouched(true);
-    if (!validateEmail(email)) {
-      setError("Please enter a valid email address.");
-    }
-  };
-
-  if (newsletter.display === false) return null;
+  const linkedinLink = "https://www.linkedin.com/in/muhammadfairuzzaki/"; // atau ambil dari social jika sudah di-export
 
   return (
     <Column
@@ -104,81 +62,35 @@ export const Mailchimp: React.FC<React.ComponentProps<typeof Column>> = ({ ...fl
           color: mailchimp.effects.lines.color,
         }}
       />
+
       <Column maxWidth="xs" horizontal="center">
         <Heading marginBottom="s" variant="display-strong-xs">
-          {newsletter.title}
+          Connect with Me on LinkedIn
         </Heading>
         <Text wrap="balance" marginBottom="l" variant="body-default-l" onBackground="neutral-weak">
-          {newsletter.description}
+          Let's connect for opportunities, collaborations, or just to say hi!
         </Text>
       </Column>
-      <form
-        style={{
-          width: "100%",
-          display: "flex",
-          justifyContent: "center",
-        }}
-        action={mailchimp.action}
-        method="post"
-        id="mc-embedded-subscribe-form"
-        name="mc-embedded-subscribe-form"
+
+      {/* Bagian tombol – pastikan center sempurna */}
+      <Flex 
+        fillWidth 
+        horizontal="center"          // <-- ini kunci untuk center horizontal
+        marginTop="m"
       >
-        <Row
-          id="mc_embed_signup_scroll"
-          fillWidth
-          maxWidth={24}
-          s={{ direction: "column" }}
-          gap="8"
+        <Button
+          id="connect-linkedin"
+          size="l"
+          variant="primary"
+          arrowIcon
+          href={linkedinLink}
+          target="_blank"
+          rel="noopener noreferrer"
+          style={{ minWidth: "220px" }} // optional: biar tombol tidak terlalu sempit
         >
-          <Input
-            formNoValidate
-            id="mce-EMAIL"
-            name="EMAIL"
-            type="email"
-            placeholder="Email"
-            required
-            onChange={(e) => {
-              if (error) {
-                handleChange(e);
-              } else {
-                debouncedHandleChange(e);
-              }
-            }}
-            onBlur={handleBlur}
-            errorMessage={error}
-          />
-          <div style={{ display: "none" }}>
-            <input
-              type="checkbox"
-              readOnly
-              name="group[3492][1]"
-              id="mce-group[3492]-3492-0"
-              value=""
-              checked
-            />
-          </div>
-          <div id="mce-responses" className="clearfalse">
-            <div className="response" id="mce-error-response" style={{ display: "none" }}></div>
-            <div className="response" id="mce-success-response" style={{ display: "none" }}></div>
-          </div>
-          <div aria-hidden="true" style={{ position: "absolute", left: "-5000px" }}>
-            <input
-              type="text"
-              readOnly
-              name="b_c1a5a210340eb6c7bff33b2ba_0462d244aa"
-              tabIndex={-1}
-              value=""
-            />
-          </div>
-          <div className="clear">
-            <Row height="48" vertical="center">
-              <Button id="mc-embedded-subscribe" value="Subscribe" size="m" fillWidth>
-                Subscribe
-              </Button>
-            </Row>
-          </div>
-        </Row>
-      </form>
+          Connect on LinkedIn
+        </Button>
+      </Flex>
     </Column>
   );
 };

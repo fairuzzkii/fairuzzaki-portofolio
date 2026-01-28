@@ -10,11 +10,11 @@ import {
   Schema,
   Meta,
   Line,
+  Flex,
 } from "@once-ui-system/core";
-import { home, about, person, baseURL, routes } from "@/resources";
-import { Mailchimp } from "@/components";
+import { home, about, person, baseURL, routes, social } from "@/resources";
 import Projects from "@/components/work/Projects";
-import { Posts } from "@/components/blog/Posts";
+import { Mailchimp } from "@/components";
 
 export async function generateMetadata() {
   return Meta.generate({
@@ -42,6 +42,8 @@ export default function Home() {
           image: `${baseURL}${person.avatar}`,
         }}
       />
+
+      {/* Hero section */}
       <Column fillWidth horizontal="center" gap="m">
         <Column maxWidth="s" horizontal="center" align="center">
           {home.featured.display && (
@@ -100,30 +102,90 @@ export default function Home() {
           </RevealFx>
         </Column>
       </Column>
-      <RevealFx translateY="16" delay={0.6}>
-        <Projects range={[1, 1]} />
-      </RevealFx>
-      {routes["/blog"] && (
-        <Column fillWidth gap="24" marginBottom="l">
-          <Row fillWidth paddingRight="64">
-            <Line maxWidth={48} />
-          </Row>
-          <Row fillWidth gap="24" marginTop="40" s={{ direction: "column" }}>
-            <Row flex={1} paddingLeft="l" paddingTop="24">
-              <Heading as="h2" variant="display-strong-xs" wrap="balance">
-                Latest from the blog
-              </Heading>
-            </Row>
-            <Row flex={3} paddingX="20">
-              <Posts range={[1, 2]} columns="2" />
-            </Row>
-          </Row>
-          <Row fillWidth paddingLeft="64" horizontal="end">
-            <Line maxWidth={48} />
-          </Row>
+
+{/* Featured Projects */}
+<RevealFx translateY="16" delay={0.6}>
+  <Column fillWidth gap="l" marginY="m" horizontal="center">
+    <Heading variant="display-strong-s" as="h2">
+      Featured Projects
+    </Heading>
+
+    {/* Tampilkan project 1, 3, dan 8 secara terpisah */}
+    <Column fillWidth gap="s">
+      <Projects range={[1,1]} />   {/* project nomor 1 */}
+      <Projects range={[3,3]} />   {/* project nomor 3 */}
+      <Projects range={[8,8]} />   {/* project nomor 8 */}
+    </Column>
+
+    <Flex horizontal="center" marginTop="xs">
+      <Button href="/work" variant="secondary" arrowIcon>
+        View All Projects
+      </Button>
+    </Flex>
+  </Column>
+</RevealFx>
+
+      {/* Technical Skills – garis atas & bawah sekarang SIMETRIS di tengah */}
+      <Column fillWidth gap="m" marginY="l" horizontal="center">
+        {/* Garis atas – center */}
+        <Flex fillWidth horizontal="center">
+          <Line maxWidth={48} />
+        </Flex>
+
+        <Column fillWidth horizontal="center" gap="24" marginTop="l">
+          <Heading as="h2" variant="display-strong-xs" wrap="balance">
+            Technical Skills
+          </Heading>
+
+          <Column fillWidth maxWidth="m" gap="l" horizontal="center">
+            {about.technical.skills.map((category, index) => (
+              <Column key={index} gap="m" horizontal="center" align="center">
+                <Heading variant="heading-strong-m">{category.title}</Heading>
+
+                {category.description && (
+                  <Column maxWidth="s">
+                    <Text
+                      onBackground="neutral-weak"
+                      variant="body-default-m"
+                      align="center"
+                    >
+                      {category.description}
+                    </Text>
+                  </Column>
+                )}
+
+                {category.tags && category.tags.length > 0 && (
+                  <Flex wrap gap="xs" horizontal="center">
+                    {category.tags.map((tag, tagIdx) => (
+                      <Badge
+                        key={tagIdx}
+                        background="neutral-alpha-weak"
+                        onBackground="neutral-strong"
+                        icon={tag.icon}
+                      >
+                        {tag.name}
+                      </Badge>
+                    ))}
+                  </Flex>
+                )}
+              </Column>
+            ))}
+          </Column>
         </Column>
-      )}
-      <Projects range={[2]} />
+
+        {/* Garis bawah – center */}
+        <Flex fillWidth horizontal="center">
+          <Line maxWidth={48} />
+        </Flex>
+
+        <Flex horizontal="center" marginTop="l">
+          <Button href="/about" variant="secondary" arrowIcon>
+            View Full Profile
+          </Button>
+        </Flex>
+      </Column>
+
+      {/* Connect LinkedIn via Mailchimp component */}
       <Mailchimp />
     </Column>
   );
