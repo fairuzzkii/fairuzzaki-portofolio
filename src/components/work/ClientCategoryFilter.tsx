@@ -3,9 +3,9 @@
 
 import { useState } from "react";
 import { Row, Button, Column } from "@once-ui-system/core";
-import { ProjectCard } from "@/components"; // assume this is ok
+import { ProjectCard } from "@/components"; // atau sesuai path ProjectCard kamu
 
-// Assume Project type from your utils (or define here)
+// Define type Project kalau belum ada (sesuaikan dengan utils kamu)
 type Project = {
   slug: string;
   metadata: {
@@ -35,7 +35,7 @@ export default function ClientCategoryFilter({ initialProjects }: ClientCategory
     "IoT",
   ];
 
-  // Filter on client (no fs needed)
+  // Filter on client
   const filteredProjects = currentCategory === "All"
     ? initialProjects
     : initialProjects.filter(
@@ -43,19 +43,22 @@ export default function ClientCategoryFilter({ initialProjects }: ClientCategory
       );
 
   const sortedProjects = [...filteredProjects].sort((a, b) => {
-  const dateA = new Date(a.metadata.publishedAt).getTime();
-  const dateB = new Date(b.metadata.publishedAt).getTime();
-
-  // Jika salah satu tanggal tidak valid, pindahkan ke paling bawah
-  if (isNaN(dateA)) return 1;
-  if (isNaN(dateB)) return -1;
-
-  return dateB - dateA; // Terbaru ke terlama
-});
+    return new Date(b.metadata.publishedAt).getTime() - new Date(a.metadata.publishedAt).getTime();
+  });
 
   return (
     <>
-      <Row gap="8" horizontal="center" marginBottom="24">
+      <Row
+        gap="8"
+        horizontal="center"
+        marginBottom="24"
+        wrap={true}               // <-- Kunci responsif: button wrap ke baris baru di mobile
+        fillWidth                 // <-- Mengisi lebar penuh agar centering rapi
+        style={{
+          maxWidth: "100%",       // Pastikan tidak overflow
+          padding: "0 16px",      // Padding samping agar tidak nempel tepi layar HP
+        }}
+      >
         {categories.map((category) => (
           <Button
             key={category}
@@ -63,6 +66,12 @@ export default function ClientCategoryFilter({ initialProjects }: ClientCategory
             size="s"
             onClick={() => setCurrentCategory(category)}
             className={`filter-button ${currentCategory === category ? "active" : ""}`}
+            style={{
+              minWidth: "fit-content",  // Agar tidak terlalu memanjang
+              padding: "8px 16px",      // Area klik lebih besar untuk touch di HP
+              margin: "4px 0",          // Jarak vertikal antar baris
+              whiteSpace: "nowrap",     // Agar teks tidak wrap di dalam button
+            }}
           >
             {category}
           </Button>

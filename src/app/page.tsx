@@ -117,7 +117,7 @@ export default function Home() {
       <Projects range={[8,8]} />   {/* project nomor 8 */}
     </Column>
 
-    <Flex horizontal="center" marginTop="xs">
+    <Flex horizontal="center" >
       <Button href="/work" variant="secondary" arrowIcon>
         View All Projects
       </Button>
