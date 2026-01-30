@@ -17,14 +17,27 @@ import Projects from "@/components/work/Projects";
 import { Mailchimp } from "@/components";
 
 export async function generateMetadata() {
-  return Meta.generate({
-    title: home.title,
-    description: home.description,
-    baseURL: baseURL,
-    path: home.path,
-    image: home.image,
-  });
+  return {
+    title: "Fairuz Zaki | Portfolio",
+    description: "Personal portfolio showcasing projects, skills, and experience.",
+    openGraph: {
+      title: "Fairuz Zaki | Portfolio",
+      description: "Personal portfolio showcasing projects, skills, and experience.",
+      url: "https://fairuzzaki-portofolio.vercel.app/",
+      siteName: "Fairuz Zaki Portfolio",
+      images: [
+        {
+          url: "https://fairuzzaki-portofolio.vercel.app/images/og/home.png",
+          width: 1200,
+          height: 630,
+          alt: "Fairuz Zaki Portfolio Preview",
+        },
+      ],
+      type: "website",
+    },
+  };
 }
+
 
 export default function Home() {
   return (
