@@ -112,8 +112,8 @@ const about: About = {
     description: (
       <>
       An undergraduate Information Technology student at the Faculty of Computer Science, University of Jember,
-      with a strong passion for Software Development, specializing in Web development and Mobile application
-      development. Experienced in UI/UX and graphic design. Actively involved in student organizations and
+      with a strong passion for Software Development, specializing in Web Development and Mobile Application
+      Development. Experienced in UI/UX and Graphic Design. Actively involved in student organizations and
       laboratory activities, with a strong commitment to continuous learning and professional growth.
       </>
     ),
@@ -122,6 +122,41 @@ const about: About = {
     display: true, // set to false to hide this section
     title: "Work Experience",
     experiences: [
+      {
+        company: "PT. Hanss Business Indonesia (Schooltech Indonesia) - Internship",
+        timeframe: " February 2026 - Present", // sesuaikan timeframe-nya
+        role: "Fullstack Web Developer",
+        achievements: [
+          <>
+            Designed and implemented system architecture using Clean Architecture principles,
+            ensuring separation of concerns, high modularity, and scalability across all application layers.
+          </>,
+          <>
+            Developed high-performance RESTful APIs using Golang (Gin/Fiber/Echo) with JWT authentication,
+            RBAC authorization, rate limiting, and comprehensive unit & integration testing.
+          </>,
+          <>
+            Applied Repository Pattern to decouple business logic from data access layers,
+            supporting MariaDB (relational) and MongoDB (NoSQL) in a hybrid database architecture.
+          </>,
+          <>
+            Built responsive Single Page Application frontend using Vue.js with Pinia state management,
+            asynchronous API integration, lazy loading, and cross-browser optimization.
+          </>,
+          <>
+            Integrated third-party services including payment gateway, email service, OAuth authentication,
+            and cloud storage with proper webhook handling and error fallback mechanisms.
+          </>,
+          <>
+            Handled end-to-end DevOps including VPS Linux setup, Docker containerization, CI/CD pipeline,
+            Nginx configuration, SSL/HTTPS, database backup, and production monitoring.
+          </>,
+          <>
+            Ensured system security against SQL injection, XSS/CSRF, implemented password encryption,
+            rate limiting, and performed regular performance profiling, refactoring, and dependency updates.
+          </>,
+        ],
+      },
       {
         company: "PT. Mascitra Teknologi Indonesia - Internship",
         timeframe: "September 2025 - December 2025",
@@ -309,6 +344,15 @@ const about: About = {
             icon: "electronjs",
           },
           {
+            name: "Vue.js",
+            icon: "vuejs",
+          },
+          {
+            name: "Golang",
+            icon: "golang",
+          },
+
+          {
             name: "HTML",
             icon: "html5",
           },
@@ -425,6 +469,24 @@ const about: About = {
     display: true,
     title: "Organizational Experience",
     organizations: [
+        {
+          name: "Google Developer Groups (GDG) on Campus PENS",
+          role: "Member / Attendee",
+          timeframe: "December 2025 - Present", // sesuaikan tahunnya
+          description: <>
+            - Participated in developer community events, tech talks, and workshops organized by GDG on Campus PENS. <br/>
+            - Engaged with topics related to Google technologies, software development, and the latest industry trends. <br/>
+            - Expanded professional network through collaborative learning with fellow developers and tech enthusiasts.
+          </>,
+          // images: [
+          //   {
+          //     // src: "/images/organization/gdg.jpg", // ganti dengan foto yang sesuai
+          //     // alt: "GDG on Campus PENS",
+          //     // width: 16,
+          //     // height: 9,
+          //   },
+          // ],
+        },
       {
         name: "Himpunan Mahasiswa Teknologi Informasi Universitas Jember",
         role: "Human Resource Development Staff",

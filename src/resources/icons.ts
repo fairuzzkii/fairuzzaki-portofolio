@@ -49,7 +49,9 @@ import {
 } from "react-icons/si";
 
 import { FaDiscord, FaGithub, FaLinkedin, FaX, FaThreads, FaInstagram, FaXTwitter, FaFacebook, FaPinterest, FaWhatsapp, FaReddit, FaTelegram, FaSquareDribbble, FaNodeJs, FaPhp,  FaHtml5, FaCss3,FaLaravel,FaBootstrap,FaFlutter,FaDartLang, FaGit, FaJira, FaTrello, 
-  FaPython} 
+  FaPython,
+  FaVuejs,
+  FaGolang} 
 from "react-icons/fa6";
 
 export const iconLibrary: Record<string, IconType> = {
@@ -77,6 +79,8 @@ export const iconLibrary: Record<string, IconType> = {
   rocket: HiOutlineRocketLaunch,
   javascript: SiJavascript,
   nextjs: SiNextdotjs,
+  vuejs: FaVuejs,
+  golang: FaGolang,
   supabase: SiSupabase,
   figma: SiFigma,
   facebook: FaFacebook,
