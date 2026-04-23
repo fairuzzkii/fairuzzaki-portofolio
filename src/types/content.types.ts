@@ -108,7 +108,7 @@ export interface Home extends BasePageConfig {
 
 /**
  * About page configuration.
- * @description Configuration for the About page, including sections for table of contents, avatar, calendar, introduction, work experience, studies, and technical skills.
+ * @description Configuration for the About page, including sections for table of contents, avatar, calendar, introduction, professional experience, studies, and technical skills.
  */
 export interface About extends BasePageConfig {
   /** Table of contents configuration */
@@ -139,13 +139,13 @@ export interface About extends BasePageConfig {
     /** Description of the introduction section */
     description: React.ReactNode;
   };
-  /** Work experience section */
+  /** Professional experience section */
   work: {
-    /** Whether to display work experience */
+    /** Whether to display professional experience */
     display: boolean;
-    /** Title for the work experience section */
+    /** Title for the professional experience section */
     title: string;
-    /** List of work experiences */
+    /** List of professional experiences */
     experiences: Array<{
       /** Company name */
       company: string;

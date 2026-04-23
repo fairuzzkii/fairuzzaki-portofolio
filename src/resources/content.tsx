@@ -85,8 +85,8 @@ const home: Home = {
   },
   subline: (
     <>
-    Get to know my projects and background as a junior software developer.
-</>
+      Get to know my projects and background as a junior software developer.
+    </>
   ),
 };
 
@@ -111,17 +111,38 @@ const about: About = {
     title: "Introduction",
     description: (
       <>
-      An undergraduate Information Technology student at the Faculty of Computer Science, University of Jember,
-      with a strong passion for Software Development, specializing in Web Development and Mobile Application
-      Development. Experienced in UI/UX and Graphic Design. Actively involved in student organizations and
-      laboratory activities, with a strong commitment to continuous learning and professional growth.
+        Active Information Technology student at the Faculty of Computer Science, University of Jember, with a
+        strong passion for Software Development, specializing in Mobile Application Development and Web Development.
+        Experienced in UI/UX and graphic design. Actively involved in student organizations and laboratory activities,
+        with a strong commitment to continuous learning and professional growth.
       </>
     ),
   },
   work: {
     display: true, // set to false to hide this section
-    title: "Work Experience",
+    title: "Professional Experience",
     experiences: [
+      {
+        company: "Google Student Ambassador Indonesia",
+        timeframe: "April 2026 - Present",
+        role: "Student Ambassador",
+        achievements: [
+          <>
+            Served as the official Google representative on campus to bridge the gap between academic learning and
+            industry-leading technology, specifically focusing on the integration of Google Gemini and AI-driven
+            solutions.
+          </>,
+          <>
+            Cultivated a vibrant tech community by organizing collaborative hackathons and peer-learning sessions,
+            fostering a culture of technical excellence and problem-solving using the Google developer ecosystem.
+          </>,
+          <>
+            Architected and executed high-impact workshops and tech-talks focused on AI literacy, demonstrating the
+            practical application of Google Cloud tools and Generative AI to enhance student productivity and
+            innovation.
+          </>,
+        ],
+      },
       {
         company: "PT. Hanss Business Indonesia (Schooltech Indonesia) - Internship",
         timeframe: " February 2026 - Present", // sesuaikan timeframe-nya
@@ -167,20 +188,20 @@ const about: About = {
             Figma designs with a strong focus on UI/UX consistency.
           </>,
           <>
-          Integrated and consumed RESTful APIs using BLoC state management and clean architecture,
-          including independent API exploration due to limited documentation.
+            Integrated and consumed RESTful APIs using BLoC state management and clean architecture,
+            including independent API exploration due to limited documentation.
           </>,
           <>
-          Developed backend components by creating and updating RESTful API controllers and routes to
-          support mobile features and data management.
+            Developed backend components by creating and updating RESTful API controllers and routes to
+            support mobile features and data management.
           </>,
           <>
-          Implemented testing and debugging processes to identify issues, improve application stability, and
-          optimize performance.
+            Implemented testing and debugging processes to identify issues, improve application stability, and
+            optimize performance.
           </>,
           <>
-          Collaborated with cross-functional teams, including UI/UX designers and backend developers,
-          throughout the full agile software development lifecycle.
+            Collaborated with cross-functional teams, including UI/UX designers and backend developers,
+            throughout the full agile software development lifecycle.
           </>,
 
         ],
@@ -192,7 +213,7 @@ const about: About = {
             width: 16,
             height: 9,
           },
-                    {
+          {
             src: "/images/work/sertif_magang.jpg",
             alt: "Mascitra Teknologi Indonesia",
             width: 16,
@@ -201,22 +222,22 @@ const about: About = {
         ],
       },
       {
-        company: "Technology Infrastructure Laboratory - Contract",
+        company: "Teaching Assistant - Contract",
         timeframe: "February 2025 – Present",
         role: "Teaching Assistant",
         achievements: [
           <>
-          Assisted in teaching computer networking practicum sessions for approximately 50 students, covering
-          basic network configuration and network troubleshooting.
+            Assisted in teaching computer networking practicum sessions for approximately 50 students, covering
+            basic network configuration and network troubleshooting.
           </>,
           <>
             Provided guidance and technical support to students during practicum sessions.
           </>,
           <>
-          Assisted in preparing lab materials and equipment to ensure smooth practicum operations.
+            Assisted in preparing lab materials and equipment to ensure smooth practicum operations.
           </>,
           <>
-          Managed weekly attendance, assignments, and practicum grading in a structured and organized manner.
+            Managed weekly attendance, assignments, and practicum grading in a structured and organized manner.
           </>,
         ],
         images: [
@@ -249,9 +270,9 @@ const about: About = {
       {
         name: "University of Jember - Bachelor of Information Technology",
         description: <>2023 - Present <br /> <br /> Grade: GPA 3.95 out of 4.00 <br /> <br /> Activities and societies: Himpunan Mahasiswa Teknologi Informasi
-        and Laboratorium Infrastrukur Teknologi <br /> <br /> Currently undergoing education in the field of computer science with a focus on developing both hard and soft skills. Specializing in software development and programming. Additionally, actively participating in academic pursuits such as competitions, as well as being involved in organizational activities within the Information Technology department.
-        <br /> <br /> Relevant Course : Database Management System, Algorithms and Programming, Web Programming, Object Oriented Programming, Mobile
-        Programming, Application Programming Interface, UI/UX Design, Software Development</>,
+          and Laboratorium Infrastrukur Teknologi <br /> <br /> Currently undergoing education in the field of computer science with a focus on developing both hard and soft skills. Specializing in software development and programming. Additionally, actively participating in academic pursuits such as competitions, as well as being involved in organizational activities within the Information Technology department.
+          <br /> <br /> Relevant Course : Database Management System, Algorithms and Programming, Web Programming, Object Oriented Programming, Mobile
+          Programming, Application Programming Interface, UI/UX Design, Software Development</>,
       },
       {
         name: "Vocational School Graduate Academy (VSGA)",
@@ -299,27 +320,27 @@ const about: About = {
         // ],
       },
       {
-          title: "Hardskills",
-          description: (
-            <>
-              • Software Development &nbsp; • Mobile App Development &nbsp; • Web Development <br />
-              • Backend Development &nbsp;  • Frontend Development &nbsp;   • Database Management System <br />
-              • Application Programming Interface (API) &nbsp;              • UI/UX Design &nbsp; • Graphic Design
-            </>
-          ),
+        title: "Hardskills",
+        description: (
+          <>
+            • Software Development &nbsp; • Mobile App Development &nbsp; • Web Development <br />
+            • Backend Development &nbsp;  • Frontend Development &nbsp;   • Database Management System <br />
+            • Application Programming Interface (API) &nbsp;              • UI/UX Design &nbsp; • Graphic Design
+          </>
+        ),
       },
       {
-          title: "Tech Stack",
-          description: (
-            <>
-            </>
-          ),
+        title: "Tech Stack",
+        description: (
+          <>
+          </>
+        ),
         tags: [
           {
             name: "JavaScript",
             icon: "javascript",
           },
-                    {
+          {
             name: "TypeScript",
             icon: "typescript",
           },
@@ -367,7 +388,7 @@ const about: About = {
           {
             name: "C#",
             icon: "csharp",
-          }, 
+          },
           {
             name: "c++",
             icon: "cpp",
@@ -376,11 +397,11 @@ const about: About = {
             name: "Dart",
             icon: "dart",
           },
-                    {
+          {
             name: "Kotlin",
             icon: "kotlin",
           },
-                    {
+          {
             name: "Python",
             icon: "python",
           },
@@ -392,67 +413,67 @@ const about: About = {
             name: "Flutter",
             icon: "flutter",
           },
-                    {
+          {
             name: "Bootstrap",
             icon: "bootstrap",
           },
-                    {
+          {
             name: "Tailwind CSS",
             icon: "tailwindcss",
           },
-                    {
+          {
             name: "MySQL",
             icon: "mysql",
           },
-                    {
+          {
             name: "PostgreSQL",
             icon: "postgresql",
           },
           {
             name: "Supabase",
             icon: "supabase",
-          },  
+          },
           {
             name: "Firebase",
             icon: "firebase",
           },
-                    {
+          {
             name: "Postman",
             icon: "postman",
           },
-                    {
+          {
             name: "Swagger",
             icon: "swagger",
           },
-                    {
+          {
             name: "Vercel",
             icon: "vercel",
           },
-                    {
+          {
             name: "Ngrok",
             icon: "ngrok",
           },
-                    {
+          {
             name: "Git",
             icon: "git",
           },
-                    {
+          {
             name: "Figma",
             icon: "figma",
           },
-                    {
+          {
             name: "Canva",
             icon: "canva",
           },
-                    {
+          {
             name: "Trello",
             icon: "trello",
           },
-                    {
+          {
             name: "Jira",
             icon: "jira",
           },
-                    {
+          {
             name: "ClickUp",
             icon: "clickup",
           },
@@ -465,37 +486,37 @@ const about: About = {
       },
     ],
   },
-    organizational: {
+  organizational: {
     display: true,
     title: "Organizational Experience",
     organizations: [
-        {
-          name: "Google Developer Groups (GDG) on Campus PENS",
-          role: "Member / Attendee",
-          timeframe: "December 2025 - Present", // sesuaikan tahunnya
-          description: <>
-            - Participated in developer community events, tech talks, and workshops organized by GDG on Campus PENS. <br/>
-            - Engaged with topics related to Google technologies, software development, and the latest industry trends. <br/>
-            - Expanded professional network through collaborative learning with fellow developers and tech enthusiasts.
-          </>,
-          // images: [
-          //   {
-          //     // src: "/images/organization/gdg.jpg", // ganti dengan foto yang sesuai
-          //     // alt: "GDG on Campus PENS",
-          //     // width: 16,
-          //     // height: 9,
-          //   },
-          // ],
-        },
+      {
+        name: "Google Developer Groups (GDG) on Campus PENS",
+        role: "Member / Attendee",
+        timeframe: "December 2025 - Present", // sesuaikan tahunnya
+        description: <>
+          - Participated in developer community events, tech talks, and workshops organized by GDG on Campus PENS. <br />
+          - Engaged with topics related to Google technologies, software development, and the latest industry trends. <br />
+          - Expanded professional network through collaborative learning with fellow developers and tech enthusiasts.
+        </>,
+        // images: [
+        //   {
+        //     // src: "/images/organization/gdg.jpg", // ganti dengan foto yang sesuai
+        //     // alt: "GDG on Campus PENS",
+        //     // width: 16,
+        //     // height: 9,
+        //   },
+        // ],
+      },
       {
         name: "Himpunan Mahasiswa Teknologi Informasi Universitas Jember",
         role: "Human Resource Development Staff",
         timeframe: "2023 - Present",
-        description: <>- Responsible for student development programs and training. 
-        <br/> - Actively involved in planning and executing six divisional programs focused on developing students’
-        soft skills and potential. <br/>- Coordinated training activities, seminars, and self-development programs for association members. <br/> 
-        - Developed communication, time management, and leadership skills through active organizational
-        involvement.</>,
+        description: <>- Responsible for student development programs and training.
+          <br /> - Actively involved in planning and executing six divisional programs focused on developing students’
+          soft skills and potential. <br />- Coordinated training activities, seminars, and self-development programs for association members. <br />
+          - Developed communication, time management, and leadership skills through active organizational
+          involvement.</>,
         images: [
           {
             src: "/images/organization/himatif.jpg",
@@ -509,9 +530,9 @@ const about: About = {
         name: "Technology Infrastructure Laboratory",
         role: "Head of Research and Development Division",
         timeframe: "2024 - Present",
-        description: <>- Led and coordinated research and development activities within the laboratory. <br/>
-        - Designed and supervised internal training programs related to networking, cybersecurity, and
-communication technology. <br/></>,
+        description: <>- Led and coordinated research and development activities within the laboratory. <br />
+          - Designed and supervised internal training programs related to networking, cybersecurity, and
+          communication technology. <br /></>,
         images: [
           {
             src: "/images/organization/infratek.jpeg",
@@ -525,10 +546,10 @@ communication technology. <br/></>,
         name: "Technology Innovative Challenge 8.0 (TIC) National-Level Web Development Competition",
         role: "Event Chairperson",
         timeframe: "June 2025 - August 2025",
-        description: <>- Served as the Chairperson of a national-level web development competition involving participants from various regions in Indonesia.<br/>
-        - Led and coordinated the organizing committee, overseeing event planning, execution, and evaluation.<br/>
-      - Managed cross-division collaboration, timelines, and communication to ensure smooth event operations.<br/>
-        - Strengthened leadership, decision-making, and organizational management skills through end-to-end event coordination.</>,
+        description: <>- Served as the Chairperson of a national-level web development competition involving participants from various regions in Indonesia.<br />
+          - Led and coordinated the organizing committee, overseeing event planning, execution, and evaluation.<br />
+          - Managed cross-division collaboration, timelines, and communication to ensure smooth event operations.<br />
+          - Strengthened leadership, decision-making, and organizational management skills through end-to-end event coordination.</>,
         images: [
           {
             src: "/images/organization/tic.png",
@@ -538,7 +559,7 @@ communication technology. <br/></>,
           },
         ],
       },
-            {
+      {
         name: "Pengenalan Kehidupan Kampus bagi Mahasiswa Baru (PKKMB) Fakultas Ilmu Komputer Universitas Jember",
         role: "Event staff",
         timeframe: "August 2024",
@@ -572,7 +593,7 @@ communication technology. <br/></>,
           },
         ],
       },
-            {
+      {
         name: "Junior Mobile Programmer (Vocational School Graduate Academy)",
         issuer: "Digital Talent Scholarship, KOMDIGI, BPSDMP Surabaya",
         year: "2025",
@@ -602,7 +623,7 @@ communication technology. <br/></>,
         name: "Web Development Course",
         issuer: "Dicoding Indonesia",
         year: "2025",
-                images: [
+        images: [
           {
             src: "/images/certifications/web development.jpg",
             alt: "web development",
@@ -611,11 +632,11 @@ communication technology. <br/></>,
           },
         ],
       },
-            {
+      {
         name: "Back-End Development with JavaScript",
         issuer: "Dicoding Indonesia",
         year: "2025",
-                images: [
+        images: [
           {
             src: "/images/certifications/backend.jpg",
             alt: "back-end js",
@@ -624,7 +645,7 @@ communication technology. <br/></>,
           },
         ],
       },
-    {
+      {
         name: "Javascript Programming Fundamentals",
         issuer: "Dicoding Indonesia",
         year: "2025",
@@ -650,7 +671,7 @@ communication technology. <br/></>,
           },
         ],
       },
-            {
+      {
         name: "FullStack Web Development Course",
         issuer: "Purwadhika Digital Technology School",
         year: "2025",
@@ -663,7 +684,7 @@ communication technology. <br/></>,
           },
         ],
       },
-                  {
+      {
         name: "UI/UX Design Course",
         issuer: "Purwadhika Digital Technology School",
         year: "2025",
@@ -699,21 +720,21 @@ communication technology. <br/></>,
       {
         name: "2nd Runner-Up National Mobile Development Competition, FIT Competition (Live Coding)",
         year: "August 2025",
-        description: "Issued by Universitas Kristen Satya Wacana (UKSW), Salatiga", 
-                images: [
+        description: "Issued by Universitas Kristen Satya Wacana (UKSW), Salatiga",
+        images: [
           {
             src: "/images/awards/fit1.jpeg",
             alt: "fit",
             width: 16,
             height: 9,
           },
-                    {
+          {
             src: "/images/awards/fit2.jpeg",
             alt: "fit",
             width: 16,
             height: 9,
           },
-                    {
+          {
             src: "/images/awards/fit3.jpeg",
             alt: "fit",
             width: 16,
@@ -725,15 +746,15 @@ communication technology. <br/></>,
       {
         name: "Finalist GEMASTIK (Pagelaran Mahasiswa Nasional Bidang Teknologi Informasi dan Komunikasi), Division IV: User Experience Design",
         year: "October 2025",
-        description: "Kemendikbudristek, Puspresnas, Telkom University", 
-                images: [
+        description: "Kemendikbudristek, Puspresnas, Telkom University",
+        images: [
           {
             src: "/images/awards/gemastik1.jpeg",
             alt: "gemastik",
             width: 16,
             height: 9,
           },
-                    {
+          {
             src: "/images/awards/gemastik2.jpeg",
             alt: "gemastik",
             width: 16,
